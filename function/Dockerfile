@@ -2,9 +2,9 @@
 # Copy of official Java11 OpenFaaS Template
 # (https://github.com/openfaas/templates/blob/master/template/java11/Dockerfile)
 #
-FROM openjdk:11-jdk-slim as builder
+FROM eclipse-temurin:17-jdk-focal as builder
 
-ENV GRADLE_VER=7.1.1
+ENV GRADLE_VER=8.1.1
 RUN apt-get update -qqy \
   && apt-get install -qqy \
    --no-install-recommends \
@@ -34,7 +34,7 @@ RUN find .
 
 FROM ghcr.io/openfaas/of-watchdog:0.9.10 as watchdog
 
-FROM openjdk:11-jre-slim as ship
+FROM eclipse-temurin:17-jre-focal as ship
 RUN apt-get update -qqy \
   && apt-get install -qqy \
    --no-install-recommends \

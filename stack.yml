@@ -5,6 +5,6 @@ functions:
   spring-cloud-fn:
     lang: dockerfile
     handler: ./function
-    image: spring-cloud-fn:latest
+    image: marx2/spring-cloud-fn:latest
     environment:
       server_port: "8082"

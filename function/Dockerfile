@@ -30,9 +30,9 @@ WORKDIR /home/app
 COPY . /home/app/
 
 RUN gradle build
-RUN find .
+RUN find . 
 
-FROM openfaas/of-watchdog:0.7.6 as watchdog
+FROM ghcr.io/openfaas/of-watchdog:0.9.10 as watchdog
 
 FROM openjdk:11-jre-slim as ship
 RUN apt-get update -qqy \
